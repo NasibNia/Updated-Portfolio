@@ -8,24 +8,22 @@ function Project(name, tech , description, imgName , webUrl, gitHub){
     this.webUrl = webUrl;
     this.gitHub = gitHub;
     this.cardSide = "front";
-    this.front = $('<div class = "card projBox">');
-    this.back  = $('<div class = "card projBox">');
+    this.card = $('<div class = "projBox">');
 
 
-    this.displayFront = function (){
-
-            this.front.append('<h5 class="card-title">' + this.name + '</h5>');
-            var tmpDiv = $('<div class = "row"> <div class="col-md-12 card"><img class="img-fluid " alt='+this.name + ' src='+this.img + '></div></div>');
-            this.front.append(tmpDiv);
-            $('#portfolio-id').append(this.front);   
-    };
-
-    this.displayBack = function (){
-            this.back.append('<h5 class="card-title">' + this.name + '</h5>');
-            var tmpDiv2 = $('<div class = "row"> <div class="col-md-12 card"><p class="lead">' + this.description + '</p></div></div>');
-            this.back.append('<a href="#" class="icon">' + this.webUrl + '</a>');
-            this.back.append(tmpDiv2);
-            $('#portfolio-id').append(this.back);
+    this.displayCard = function (){
+            var tmpDiv;
+            this.card.addClass('card');
+            this.card.addClass(this.cardSide);
+            this.card.append('<h5 class="card-title">' + this.name + '</h5>');
+            if (this.cardSide === "front") {
+                tmpDiv = $('<div class = "row"> <div class="col-md-12 card"><img class="img-fluid " alt='+this.name + ' src='+this.img + '></div></div>');                   
+            } else {                
+                tmpDiv = $( '<div class = "row"> <div class="col-md-12 card"><p class="lead">' + this.description + '</p><a href="#" class="icon">' + this.webUrl + '</a></div></div>');
+                // this.card.append('<a href="#" class="icon">' + this.webUrl + '</a>');
+            }
+            this.card.append(tmpDiv);
+            $('#portfolio-id').append(this.card);
     };
 
 };
@@ -47,16 +45,10 @@ var projArr = [proj1,proj2,proj3,proj4,proj5,proj6,proj7,proj8,proj9,proj10];
 function makeCards(){
     for(var i = 0; i < projArr.length ; i++){        
         var currentProj = projArr[i];
-        currentProj.displayFront();
-        // $('#portfolio-id').append(currentProj.front);   
+        currentProj.displayCard();
+
     }
 }
-
-
-
-
-
-
 
 $(document).ready(function () {
 
@@ -65,11 +57,14 @@ $(document).ready(function () {
         makeCards();
     });
 
-
-
-
-
+    $(document).on('mouseover', '.card',function() {
+        console.log('hovering');
+        $(this).toggleClass('fron').toggleClass('back');
+        console.log(this);
+    });
 
 
 
 });
+
+
