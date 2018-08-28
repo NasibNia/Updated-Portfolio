@@ -63,19 +63,30 @@ footer{
 .lead{
     color: white;
     text-align: center;
+    font-size: 20px;
 }
 .projBox{
     display:flex;
     position:relative;
-    left:10vw;
+    left:30vw;
     top:10vh;
     flex-direction: column;
     margin-bottom:10%;
     height:auto;
-    width:200px; 
+    width:400px; 
     background-color: black;
 }
-.icon{
-    height: 2vh;
-    width: 2vw;
+.icon-github , .icon-web{
+    
+    height: auto;
+    width: 30%;
+}
+.lnk{
+    clear: both;
+}
+.icon-github{
+    float: right;
+}
+.icon-web{
+    float: left;
 }
