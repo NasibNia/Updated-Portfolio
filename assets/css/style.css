@@ -34,7 +34,8 @@ footer{
     top: 50px;
     font-size: 50px;
     /* color: #002fa7; */
-    color:#235ce9;
+    color: white;
+    /* color:#235ce9; */
     font-style: bold;
     font-weight: 1000;
 }
@@ -57,7 +58,8 @@ footer{
     width: 10vw; */
 }
 .card-title{
-    color: #235ce9;
+    color: white;
+    /* color: #235ce9; */
     text-align: center;
 }
 .lead{
