@@ -28,9 +28,9 @@ footer{
 
 }
 
-header {
+#header {
     position: fixed;
-    top: 30px;
+    top: 50px;
     font-size: 50px;
     /* color: #002fa7; */
     color: blue;
@@ -43,7 +43,24 @@ header {
     background-position: center;
     background-repeat: no-repeat; 
     background-size: cover; */
-    /* height:800px; */
+    /* height:100px; */
 
     
+}
+
+.card {
+    background-color:#343a40;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+}
+.projBox{
+    display:flex;
+    position:relative;
+    left:10vw;
+    top:10vh;
+    flex-direction: column;
+    margin-bottom:10%;
+    height:auto;
+    width:50%; 
+    background-color: black;
 }
