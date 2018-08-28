@@ -35,15 +35,15 @@ header {
     /* color: #002fa7; */
     color: blue;
     font-style: bold;
-    font-weight: 800;
+    font-weight: 1000;
 }
 
 #home{
-    background: url("../images/IMG_1663.JPG");
+    /* background: url("../images/IMG_1663.JPG");
     background-position: center;
     background-repeat: no-repeat; 
-    background-size: cover;
-    height:800px;
+    background-size: cover; */
+    /* height:800px; */
 
     
 }
