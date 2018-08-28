@@ -75,3 +75,7 @@ footer{
     width:200px; 
     background-color: black;
 }
+.icon{
+    height: 2vh;
+    width: 2vw;
+}

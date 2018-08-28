@@ -12,18 +12,41 @@ function Project(name, tech , description, imgName , webUrl, gitHub){
 
 
     this.displayCard = function (){
-            var tmpDiv;
-            this.card.addClass('card');
-            this.card.addClass(this.cardSide);
-            this.card.append('<h5 class="card-title">' + this.name + '</h5>');
-            if (this.cardSide === "front") {
-                tmpDiv = $('<div class = "row"> <div class="col-md-12 card"><img class="img-fluid " alt='+this.name + ' src='+this.img + '></div></div>');                   
-            } else {                
-                tmpDiv = $( '<div class = "row"> <div class="col-md-12 card"><p class="lead">' + this.description + '</p><a href="#" class="icon">' + this.webUrl + '</a></div></div>');
-                // this.card.append('<a href="#" class="icon">' + this.webUrl + '</a>');
-            }
-            this.card.append(tmpDiv);
-            $('#portfolio-id').append(this.card);
+            
+            this.card.append('<div id="card">'+
+                                '<div class="front">'+
+                                    '<h5 class="card-title">' + this.name + '</h5>' +
+                                        '<div class = "row"> <div class="col-md-12 card"><img class="img-fluid " alt='+this.name + ' src='+this.img + '></div></div>'+
+                                '</div>' +
+                                '<div class="back">' +
+                                    '<div class = "row"> <div class="col-md-12 "><p class="lead">' + this.description + '</p></div>' +
+                                    '</div>' + 
+                                    '<div class = "row"> <div class="col-md-6 ">' +
+                                        '<a href=" '+ this.gitHub +  ' "target = "_blank" class="icon"><img class="img-fluid " src="assets/images/github2.png">   </a> '+ 
+                                        '</div>' +
+                                        '<div class="col-md-6 ">' +
+                                        '<a href=" '+ this.webUrl +  ' " target = "_blank" class="icon"><img class="img-fluid " src="assets/images/web.png">   </a> '+ 
+                                        '</div>' +
+                                    '</div>' +
+                                    
+                            '</div>');
+
+                                
+$('#portfolio-id').append(this.card);
+        
+        // var tmpDiv;
+            
+        //     this.card.addClass('front')
+        //     this.card.append('<h5 class="card-title">' + this.name + '</h5>');
+            
+        //     // if (this.cardSide === "front") {
+        //         tmpDiv = $('<div class = "row"> <div class="col-md-12 card"><img class="img-fluid " alt='+this.name + ' src='+this.img + '></div></div>');                   
+        //     } else {                
+        //         tmpDiv = $( '<div class = "row"> <div class="col-md-12 card"><p class="lead">' + this.description + '</p><a href="#" class="icon">' + this.webUrl + '</a></div></div>');
+        //         // this.card.append('<a href="#" class="icon">' + this.webUrl + '</a>');
+        //     }
+        //     this.card.append(tmpDiv);
+        //     $('#portfolio-id').append(this.card);
     };
 
 };
@@ -50,6 +73,8 @@ function makeCards(){
     }
 }
 
+
+
 $(document).ready(function () {
 
     $(document).on('click', '#portfolio', function(){
@@ -57,11 +82,13 @@ $(document).ready(function () {
         makeCards();
     });
 
-    $(document).on('mouseover', '.card',function() {
-        console.log('hovering');
-        $(this).toggleClass('fron').toggleClass('back');
-        console.log(this);
-    });
+    // $(document).on('mouseover', '.card',function() {
+    //     console.log('hovering');
+    //     $(this).toggleClass('fron').toggleClass('back');
+    //     console.log(this);
+    // });
+
+
 
 
 
