@@ -1,12 +1,49 @@
 body , html{
-    background: url("../images/lights.jpg");
-    
-    background-position: center;
-    background-repeat: repeat;
-    background-size: cover;
+    /* background: url("../images/IMG_1663.JPG"); */
+    /* background: url("../images/pic1.jpg"); */
+    /* background: url("../images/pic2.JPG"); */
+    /* background: url("../images/pic3.jpG"); */
+    /* background: url("../images/pic4.jpG"); */
+    /* background: url("../images/pic12.jpG"); */
+
+
+
+
+
+    /* background-position: center;
+    background-repeat: no-repeat; */
+    /* background-size: cover; */
+    /* height:100%; */
+
+    background-color: black;
 
     font-family: 'Hanalei Fill', cursive;
 	font-size: 20px;
     font-style: bold;
    
+}
+footer{
+    position: fixed;
+    bottom: 0px;
+
+}
+
+header {
+    position: fixed;
+    top: 30px;
+    font-size: 50px;
+    /* color: #002fa7; */
+    color: blue;
+    font-style: bold;
+    font-weight: 800;
+}
+
+#home{
+    background: url("../images/IMG_1663.JPG");
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover;
+    height:600px;
+
+    
 }
