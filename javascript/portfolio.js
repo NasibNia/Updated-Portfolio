@@ -22,7 +22,7 @@ function Project(name, tech , description, imgName , webUrl, gitHub){
                                     '<div class = "row"> <div class="col-md-12 "><p class="lead">' + this.description + '</p></div>' +
                                     '</div>' + 
                                     '<div class = "row"> <div class="col-md-6 lnk">' +
-                                        '<a href=" '+ this.gitHub +  ' "target = "_blank" "><img class="img-fluid icon-github" src="assets/images/github2.png">   </a> '+ 
+                                        '<a href=" '+ this.gitHub +  ' "target = "_blank" "><img class="img-fluid icon-github" src="assets/images/gitHub2.png">   </a> '+ 
                                         '</div>' +
                                         '<div class="col-md-6 lnk">' +
                                         '<a href=" '+ this.webUrl +  ' " target = "_blank" "><img class="img-fluid icon-web" src="assets/images/web.png">   </a> '+ 
@@ -32,7 +32,7 @@ function Project(name, tech , description, imgName , webUrl, gitHub){
                             '</div>');
 
                                 
-$('#portfolio-id').append(this.card);
+$('#portfolio-page').append(this.card);
         
         // var tmpDiv;
             
@@ -61,9 +61,10 @@ var proj7 = new Project ("Train Shceduler",["html5","css3", "Bootstrap", "javasc
 // var proj8 = new Project ("Rock Paper Scissor");
 var proj9 = new Project ("Lyri Quiz",["html5","css3", "Bootstrap", "javascript" , "jQuery" ,"API", "firebase", "moment.js", "buble.js", "alphabet.js", "UIKit"], "An interactive realtime game", "win.jpg", "https://jsutliff.github.io/LyriQuiz/","https://github.com/NasibNia/LyriQuiz");
 var proj10= new Project ("Liri Node App",["javascript" ,"node.js","API", "fs","inquirer","moment.js"],"Gettig to know Node.js", "bot.jpg","","https://github.com/NasibNia/Liri-Node-App");
+var proj11=new Project ("Word Guess App",["javascript" ,"node.js", "inquirer"],"Gettig to know Constructors & Node.js", "fruityHangman.jpg","","https://github.com/NasibNia/word-Guess");
 
 
-var projArr = [proj1,proj2,proj3,proj4,proj5,proj6,proj7,proj9,proj10];
+var projArr = [proj1,proj2,proj3,proj4,proj5,proj6,proj7,proj9,proj10,proj11];
 
 function makeCards(){
     for(var i = 0; i < projArr.length ; i++){        
@@ -79,13 +80,14 @@ $(document).ready(function () {
 
     $(document).on('click', '#portfolio', function(){
         $('#home').hide();
-        $('#about').hide();
+        $('#about-me-page').hide();
         makeCards();
     });
 
     $(document).on('click', '#about-me', function(){
-        $('#home').hide();
-        $('#portfolio').hide();
+        $('#portfolio-page').hide();
+        $('#home').show();
+        
         
     });
 
